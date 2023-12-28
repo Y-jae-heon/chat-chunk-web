@@ -66,6 +66,7 @@
 </style>
 
 <script lang="ts">
+  import counterStore from '$store/counter.store'
   import { spring } from 'svelte/motion'
 
   let count = 0
@@ -81,7 +82,12 @@
 </script>
 
 <div class="counter">
-  <button on:click={() => (count -= 1)} aria-label="Decrease the counter by one">
+  <button
+    on:click={() => {
+      count -= 1
+    }}
+    aria-label="Decrease the counter by one"
+  >
     <svg aria-hidden="true" viewBox="0 0 1 1">
       <path d="M0,0.5 L1,0.5" />
     </svg>
@@ -92,6 +98,7 @@
       <strong class="hidden" aria-hidden="true">{Math.floor($displayed_count + 1)}</strong
       >
       <strong>{Math.floor($displayed_count)}</strong>
+      <strong>{$counterStore.value}</strong>
     </div>
   </div>
 

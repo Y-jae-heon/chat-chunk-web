@@ -12,11 +12,9 @@
   }
 </style>
 
-<!-- <script>
-	import Counter from './Counter.svelte';
-	import welcome from '$lib/images/svelte-welcome.webp';
-	import welcome_fallback from '$lib/images/svelte-welcome.png';
-</script> -->
+<script>
+	import Counter from '$components/Counter.svelte';
+</script>
 
 <svelte:head>
   <title>Home</title>
@@ -27,4 +25,5 @@
   <h1>Hello,</h1>
   <h1 class="text-3xl font-bold underline">Welcome to SvelteKit</h1>
   <h2 class="">Open AI Chat GPT Example</h2>
+  <Counter />
 </section>
